@@ -1,0 +1,15 @@
+<h1>All recipes:</h1>
+
+<!-- add new recipe -->
+<button><a href="/recipes/new">Add new recipe</a></button>
+
+<!-- show all recipes here  -->
+<% @recipes.all.each do |recipe| %>
+ <div>
+   <h3><%= recipe.name %> </h3>
+   <p><%= recipe.ingredients %></p>
+   <p><%= recipe.cook_time %></p>
+   <button><a href="/recipes/<%= recipe.id %>">show</a></button>
+   <p>*******************</p>
+ </div>
+<% end %>
